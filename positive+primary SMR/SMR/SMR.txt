@@ -1,0 +1,13 @@
+
+GTEx
+.\smr-1.3.1-win.exe --beqtl-summary  ../SMR/full_cis_eqtl/cis-eQTLs-full --query 5.0e-8 --snp-chr ***
+Gene extract.R
+.\smr-1.3.1-win.exe --qfile .\Gene.txt --make-besd --out Gene_eqtl
+.\smr-1.3.1-win.exe --beqtl-summary .\PDCD1_eqtl --update-esi PDCD1_eqtl.esi
+.\smr-1.3.1-win.exe --beqtl-summary .\PDCD1_eqtl --update-esi PDCD1_eqtl.epi 
+
+SMR analysis
+positive control analysis
+.\smr-1.3.1-win.exe --bfile ../SMR/1000G.EUR.QC/1000G.EUR.QC.* --gwas-summary ../SMR/positive/***cancer.txt --beqtl-summary ../SMR/exposure/Gene/Gene_eqtl --maf 0.01 --out ../SMR/positive/cancer/gene_cancer_smr --thread-num 10
+primary SMR analysis
+.\smr-1.3.1-win.exe --bfile ../SMR/1000G.EUR.QC/1000G.EUR.QC.* --gwas-summary ../SMR/CVD/CVD*.txt --beqtl-summary ../SMR/exposure/Gene/Gene_eqtl --maf 0.01 --out ../SMR/CVD/Gene/Gene_CVD_smr --thread-num 10

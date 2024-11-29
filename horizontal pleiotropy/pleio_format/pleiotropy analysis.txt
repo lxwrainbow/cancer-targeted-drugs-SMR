@@ -1,0 +1,12 @@
+
+
+chr*_pleio
+.\smr-1.3.1-win.exe --beqtl-summary  ../SMR/full_cis_eqtl/cis-eQTLs-full --query 0.05 --snp-chr 7
+
+data format in R
+
+.\smr-1.3.1-win.exe --qfile .\Gene_pleio.txt --make-besd --out Gene_pleio_eqtl
+
+
+.\smr-1.3.1-win.exe --bfile ../SMR/1000G.EUR.QC/1000G.EUR.QC.* --gwas-summary ../SMR/CVD/CVD*.txt --beqtl-summary ../SMR/ple/Gene/Gene_pleio_eqtl --maf 0.01 --out ../SMR/ple/Gene/Gene_pleio_CVD*_smr --thread-num 10
+
